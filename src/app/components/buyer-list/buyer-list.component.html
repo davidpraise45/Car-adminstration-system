@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h2 class="h2">Buyer List</h2>
+    <button mat-raised-button color="primary" (click)="addBuyer()">Add Buyer</button>
+    
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">First name</th>
+          <th scope="col">Last name</th>
+          <th scope="col">Personal Identification</th>
+          <th scope="col">Occupation</th>
+          <th scope="col">House Address</th>
+          <th scope="col">Phone Number</th>
+          <th class="text-center" scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let element of Buyers; let i = index">
+          <td>{{element.firstname}}</td>
+          <td>{{element.lastname}}</td>
+          <td>{{element.personId}}</td>
+          <td>{{element.occupation}}</td>
+          <td>{{element.houseaddress}}</td>
+          <td>{{element.phonenumber}}</td>
+          <td class="text-center">
+            <button class="btn btn-sm btn-primary" routerLink="/edit-buyer/{{element._id}}">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="delete(element._id, i)">Delete</button>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

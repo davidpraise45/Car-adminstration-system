@@ -1,0 +1,104 @@
+
+
+<mat-card>
+
+  <form [formGroup]="updateBuyerForm" (ngSubmit)="onUpdate()">
+
+    <mat-form-field>
+      <input 
+          class="form-control"
+          type="text" 
+          ngDefaultControl
+          matInput
+          formControlName="firstname"
+          required
+          placeholder="First Name">
+      <mat-error *ngIf="updateBuyerForm.get('firstname')?.invalid">Enter buyer's first name</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input 
+          class="form-control"
+          type="text" 
+          ngDefaultControl
+          matInput
+          formControlName="lastname"
+          required
+          placeholder="Last Name">
+      <mat-error *ngIf="updateBuyerForm.get('lastname')?.invalid">Enter buyer's last name</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <input 
+          class="form-control"
+          type="text" 
+          ngDefaultControl
+          matInput
+          formControlName="personId"
+          required
+          placeholder="Personal Identification">
+      <mat-error *ngIf="updateBuyerForm.get('personId')?.invalid">Enter buyer's personal identification number</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input 
+          class="form-control"
+          type="text" 
+          ngDefaultControl
+          matInput
+          formControlName="occupation"
+          required
+          placeholder="Occupation">
+      <mat-error *ngIf="updateBuyerForm.get('occupation')?.invalid">Enter buyer's occupation</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <input 
+          class="form-control"
+          type="text" 
+          ngDefaultControl
+          matInput
+          formControlName="houseaddress"
+          required
+          placeholder="House Address">
+      <mat-error *ngIf="updateBuyerForm.get('houseaddress')?.invalid">Enter buyer's house address</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input 
+          class="form-control"
+          type="text" 
+          ngDefaultControl
+          matInput
+          formControlName="phonenumber"
+          required
+          placeholder="Phone Number">
+      <mat-error *ngIf="updateBuyerForm.get('phonenumber')?.invalid">Enter buyer's phone number</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input 
+          class="form-control"
+          type="text" 
+          ngDefaultControl
+          matInput
+          formControlName="carId"
+          required
+          placeholder="Car Serial Number">
+      <mat-error *ngIf="updateBuyerForm.get('carId')?.invalid">Enter Car's Serial Number</mat-error>
+    </mat-form-field>
+
+
+    <br/>
+    <button 
+        [disabled]="!updateBuyerForm.dirty || updateBuyerForm?.invalid" 
+        mat-raised-button
+        color="warn"
+        type="submit">Update Register Buyer
+    </button>
+    
+  </form>
+
+</mat-card>

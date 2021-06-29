@@ -1,0 +1,82 @@
+<mat-card>
+
+    <form [formGroup]="updateCarForm" (ngSubmit)="onUpdate()">
+  
+      <mat-form-field>
+        <input 
+            class="form-control"
+            type="text" 
+            ngDefaultControl
+            matInput
+            formControlName="make"
+            required
+            placeholder="Car Make"
+            minlength="2">
+        <mat-error *ngIf="updateCarForm.get('make')?.invalid">Enter the make of the car</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input 
+            class="form-control"
+            type="text" 
+            ngDefaultControl
+            matInput
+            formControlName="model"
+            required
+            placeholder="Car Model"
+            minlength="2">
+        <mat-error *ngIf="updateCarForm.get('model')?.invalid">Enter the model of the car</mat-error>
+      </mat-form-field>
+  
+  
+      <mat-form-field>
+        <input 
+            class="form-control"
+            type="text" 
+            ngDefaultControl
+            matInput
+            formControlName="year"
+            required
+            placeholder="Year"
+            minlength="4">
+        <mat-error *ngIf="updateCarForm.get('year')?.invalid">Enter the year of the car</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input 
+            class="form-control"
+            type="text" 
+            ngDefaultControl
+            matInput
+            formControlName="color"
+            required
+            placeholder="color"
+            minlength="3">
+        <mat-error *ngIf="updateCarForm.get('color')?.invalid">Enter car's color</mat-error>
+      </mat-form-field>
+  
+  
+      <mat-form-field>
+        <input 
+            class="form-control"
+            type="text" 
+            ngDefaultControl
+            matInput
+            formControlName="price"
+            required
+            placeholder="Price ($)"
+            minlength="4">
+        <mat-error *ngIf="updateCarForm.get('price')?.invalid">Enter car's price</mat-error>
+      </mat-form-field>
+  
+      <br/>
+      <button 
+          [disabled]="!updateCarForm.dirty || updateCarForm?.invalid" 
+          mat-raised-button
+          color="warn"
+          type="submit">Update Register Car
+      </button>
+      
+    </form>
+  
+  </mat-card>
